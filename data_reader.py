@@ -1,18 +1,30 @@
+"""
+For much of the source code for reading and processing the data, see:
+
+https://github.com/PHYS3888/SpikerStream/tree/master/SpikerStream_Python
+
+I used code from: SpikerStream_Linux_Live.py; but there are also other files that might be useful if issues arise.
+"""
+
+
 import serial
 import numpy as np
-# import plotly as plt
 import matplotlib.pyplot as plt
 
 # Define the COM port and baud rate
 COM_PORT = 'COM10'
 BAUD_RATE = 230400  # Adjust to match the baud rate of your SpikerBox
 
-# Create a serial objects
+# Create a serial object
 ser = serial.Serial(COM_PORT, BAUD_RATE)
 inputBufferSize = 10000 # 20000 = 1 second
 ser.timeout = inputBufferSize/20000.0  # set read timeout
 
-def read_arduino(ser,inputBufferSize):
+
+def read_spikerbox_data(ser,inputBufferSize):
+    """
+    Read data from the spikerbox
+    """
 
     data = ser.read(inputBufferSize)
     out = [(int(data[i])) for i in range(0,len(data))]
@@ -65,7 +77,7 @@ try:
         k = 0
         #while True:
         while k < N_loops: #Will end early so can't run forever.
-            data = read_arduino(ser,inputBufferSize)
+            data = read_spikerbox_data(ser,inputBufferSize)
             data_temp = process_data(data)
 
             if k <= N_max_loops:
