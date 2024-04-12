@@ -3,6 +3,8 @@ for fresh installation on Mac:
 
 pip install pyusb
 brew install libusb
+
+NOTE: NO LONGER NECESSARY - IGNORE THIS FILE.
 """
 
 import usb.core
