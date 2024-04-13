@@ -10,6 +10,7 @@ line, = ax.plot([], [], lw=2)
 x_data = []
 y_data = []
 
+
 # Define the update function to be called by the animation
 def update(frame):
     x_data.append(frame)
@@ -17,7 +18,8 @@ def update(frame):
     line.set_data(x_data, y_data)
     ax.relim()
     ax.autoscale_view()
-    return line,
+    return line
+
 
 # Create the animation
 ani = FuncAnimation(fig, update, frames=np.linspace(0, 10, 100), interval=100)
