@@ -1,26 +1,24 @@
 # "Make your muscles sing" Neuro SpikerBox Science Day Project
 
-### Dependencies
+### Overview
+This repository contains Python scripts for reading and processing data from a SpikerBox, a device used for recording Electromyography (EMG) data.
 
-* pyusb
-* libusb
+### Contents
 
-### Installing
+- `spikerbox_realtime_analysis_and_audio.py`: Read & analyse data from the SpikerBox via serial communication in real time.
+- `spikerbox_offline_analysis_and_audio.py`: Read & analyse .wav data recorded from the SpikerBox. Could be used to analyse & play other .wav data 
 
-On Petra's Mac - some difficulties with installing `pyusb` and `libusb`. This seems to be related to the M1 chip on the laptop. It seems that some link between `libusb` and `pyusb` only works when python has been installed via `homebrew`. Steps I took to solve this:
+### Usage for Real time analysis
 
-```commandline
-brew install libusb
-brew install python@3.9
-pip3.9 install pyusb
-```
+1. **Connect the SpikerBox**: Connect via USB, make sure it is visible in serial ports `ls /dev/tty.usb*`
 
-If this does not work, I also previously followed steps in this Stack Overflow thread (but I am not sure if these are necessary).
+2. **Run the script**: Execute `spikerbox_realtime_analysis_and_audio`. There are two modes: `record_participant_baseline = True` outputs participant's frequency range, if set to False, it plays the processed EMG signal.
 
-https://stackoverflow.com/questions/70729330/python-on-m1-mbp-trying-to-connect-to-usb-devices-nobackenderror-no-backend-a
 
-### Executing program
-
-`/opt/homebrew/bin/python3.9 /Users/Petra/Documents/repos/science_day/data_input.py`
-
-`ls /dev/cu.*`
+### Requirements
+- Python 3.9
+- NumPy
+- SciPy
+- Matplotlib
+- PySerial
+- musicpy

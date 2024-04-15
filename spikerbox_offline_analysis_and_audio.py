@@ -1,11 +1,8 @@
-import numpy as np
-from scipy.io import wavfile
 from scipy.signal import spectrogram
-import seaborn as sns
-import math
+from scipy.io import wavfile
 import musicpy as mp
-import pandas as pd
-import time
+import numpy as np
+import math
 
 
 def extract_dominant_frequency(wav_file, window_size=1):
