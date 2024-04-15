@@ -22,3 +22,7 @@ This repository contains Python scripts for reading and processing data from a S
 - Matplotlib
 - PySerial
 - musicpy
+
+
+---
+This project is built upon the core code from [SpikerStream Python repository](https://github.com/PHYS3888/SpikerStream/tree/master/SpikerStream_Python)
