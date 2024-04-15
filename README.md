@@ -1,7 +1,7 @@
 ## Neuro SpikerBox real-time EMG to audio converter
 
 ### Overview
-This repository contains Python scripts for reading and processing data from a SpikerBox, a device used for recording Electromyography (EMG) data.
+This repository contains Python scripts for reading and processing data from a SpikerBox, a device used for recording Electromyography (EMG) data. Processing includes converting signals to audible sounds.
 
 ### Contents
 
@@ -14,7 +14,7 @@ This repository contains Python scripts for reading and processing data from a S
 
 2. **Run the script**: Execute `spikerbox_realtime_analysis_and_audio`. There are two modes: `record_participant_baseline = True` outputs participant's frequency range, if set to False, it plays the processed EMG signal.
 
-\
+### Dependencies
 Tested using Python 3.9.\
 Install dependencies from requirements.txt
 
