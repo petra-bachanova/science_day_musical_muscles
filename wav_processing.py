@@ -42,7 +42,7 @@ def freq_to_note(f):
 
 
 # Example usage:
-file = 'wav files/Grace.wav'
+file = 'wav files/Elis 2.wav'
 dominant_frequencies = extract_dominant_frequency(file)
 
 # plot_df = pd.DataFrame({"freq": dominant_frequencies, "time": range(len(dominant_frequencies))})
@@ -56,14 +56,6 @@ for freq in dominant_frequencies:
         notes.append(freq_to_note(freq))
 
 # note_melody = ', '.join(notes)
-melody = mp.chord(notes, interval=[1/4]*(len(notes)-notes.count(mp.rest(1/2))))
-drum_ex = mp.drum('K, H, S, H, K;H, K;H, S, H, r:10')
-mp.play(melody, drum_ex, bpm=80, instrument=30, )
-mp.play(drum_ex, bpm=80)
-
-
+melody = mp.chord(notes, interval=[1/4]*(len(notes)-notes.count(mp.rest(1/2))), instrument=40)
+drum_ex = mp.drum('K, H, S, H, K;H, K;H, S, H, r:5')
 mp.play(mp.P([melody, drum_ex.notes], [1, 1], channels=[0, 9]))
-
-
-C1 = mp.chord(['C', 'D', mp.rest(1/2), 'E'], interval=[0.1, 0.1, 0.1])
-mp.chord(notes=['C4', 'D4', 'E4'], interval=[0, 1/2, 0], start_time=0)

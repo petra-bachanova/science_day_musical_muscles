@@ -1,4 +1,4 @@
-# NeuroSpiker Science Day Project
+# "Make your muscles sing" Neuro SpikerBox Science Day Project
 
 ### Dependencies
 
