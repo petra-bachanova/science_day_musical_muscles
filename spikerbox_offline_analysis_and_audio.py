@@ -3,6 +3,7 @@ from scipy.io import wavfile
 import musicpy as mp
 import numpy as np
 import math
+import time
 
 
 def extract_dominant_frequency(wav_file, window_size=1):
@@ -53,6 +54,8 @@ for freq in dominant_frequencies:
         notes.append(freq_to_note(freq))
 
 # note_melody = ', '.join(notes)
-melody = mp.chord(notes, interval=[1/4]*(len(notes)-notes.count(mp.rest(1/2))), instrument=40)
+melody = mp.chord(notes, interval=[1/4]*(len(notes)-notes.count(mp.rest(1/2))))
 drum_ex = mp.drum('K, H, S, H, K;H, K;H, S, H, r:5')
 mp.play(mp.P([melody, drum_ex.notes], [1, 1], channels=[0, 9]))
+# mp.play does not wait for song to play, so add sleep time to allow for this before the script ends.
+time.sleep(60)  # tweak as desired
