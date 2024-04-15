@@ -1,4 +1,4 @@
-# "Make your muscles sing" Neuro SpikerBox Science Day Project
+# Neuro SpikerBox Real-Time EMG to Audio Converter
 
 ### Overview
 This repository contains Python scripts for reading and processing data from a SpikerBox, a device used for recording Electromyography (EMG) data.
